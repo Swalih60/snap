@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:snap/screens/data_profile.dart';
+import 'package:snap/screens/profile_screen.dart';
 
 void main() {
   runApp(const MainApp());
@@ -12,7 +12,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: DataProfileScreen(),
+      home: ProfileScreen(),
       theme: ThemeData(
           floatingActionButtonTheme:
               FloatingActionButtonThemeData(elevation: 0)),
