@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:snap/components/chatTile.dart';
+import 'package:snap/components/dating_button.dart';
 import 'package:snap/components/matchAvatar.dart';
+import 'package:snap/components/request_button.dart';
 
 class MessagingScreen extends StatelessWidget {
   const MessagingScreen({super.key});
@@ -58,41 +60,9 @@ class MessagingScreen extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 16),
-                    Row(
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        ElevatedButton.icon(
-                          onPressed: () {},
-                          icon: const Icon(Icons.upload_file,
-                              color: Color(0xFF6B47DC)),
-                          label: const Text("Request Dating"),
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.white,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(100),
-                            ),
-                          ),
-                        ),
-                        ElevatedButton.icon(
-                          onPressed: () {},
-                          icon: const Icon(
-                            Icons.list,
-                            color: Colors.black,
-                          ),
-                          label: const Text(
-                            "Dating List",
-                            style: TextStyle(
-                              color: Colors.black,
-                            ),
-                          ),
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Color.fromRGBO(210, 247, 2, 1),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(100),
-                            ),
-                          ),
-                        ),
-                      ],
+                      children: [ReqButton(), DateButton()],
                     ),
                   ],
                 ),

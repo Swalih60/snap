@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 Widget buildMenuOption(IconData icon, String title, {bool isLogout = false}) {
   return Container(
-    margin: EdgeInsets.symmetric(vertical: 6),
+    margin: EdgeInsets.symmetric(vertical: 6, horizontal: 6),
     padding: EdgeInsets.symmetric(vertical: 5),
     decoration: BoxDecoration(
       color: Colors.transparent, // Optional: Background color if needed

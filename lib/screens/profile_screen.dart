@@ -14,19 +14,22 @@ class ProfileScreen extends StatelessWidget {
         elevation: 0,
         title: const Text('Profile', style: TextStyle(color: Colors.white)),
         actions: [
-          ElevatedButton.icon(
-            onPressed: () {},
-            icon: const Icon(Icons.upload_file, color: Color(0xFF6B47DC)),
-            label: const Text(
-              'Edit',
-              style: TextStyle(color: Color(0xFF6B47DC)),
-            ),
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.transparent,
-              elevation: 0,
-              side: const BorderSide(color: Color(0xFF6B47DC)),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
+          Padding(
+            padding: const EdgeInsets.only(right: 15.0),
+            child: ElevatedButton.icon(
+              onPressed: () {},
+              icon: const Icon(Icons.upload_file, color: Color(0xFF6B47DC)),
+              label: const Text(
+                'Edit',
+                style: TextStyle(color: Color(0xFF6B47DC)),
+              ),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.transparent,
+                elevation: 0,
+                side: const BorderSide(color: Color(0xFF6B47DC)),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
               ),
             ),
           ),

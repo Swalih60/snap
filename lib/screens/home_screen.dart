@@ -48,33 +48,30 @@ class _HomeScreenState extends State<HomeScreen> {
                 Padding(
                   padding: const EdgeInsets.only(top: 40, left: 20, right: 20),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       const CircleAvatar(
                         backgroundImage: AssetImage("assets/images/main.jpg"),
                         radius: 20,
                       ),
-                      const Padding(
-                        padding: EdgeInsets.only(right: 130.0),
-                        child: Column(
-                          children: [
-                            Text(
-                              "Hi Fajar Kun",
-                              style: TextStyle(color: Colors.white),
-                            ),
-                            Row(
-                              children: [
-                                Icon(Icons.location_on),
-                                Text(
-                                  "Kerala , India",
-                                  style: TextStyle(
-                                      color: Colors.white, fontSize: 15),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
+                      const Column(
+                        children: [
+                          Text(
+                            "Hi Fajar Kun",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          Row(
+                            children: [
+                              Icon(Icons.location_on),
+                              Text(
+                                "Kerala , India",
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 15),
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
+                      Spacer(),
                       Padding(
                         padding: const EdgeInsets.only(right: 10.0),
                         child: Container(
