@@ -35,101 +35,103 @@ class ProfileScreen extends StatelessWidget {
         ],
       ),
       body: SafeArea(
-        child: Column(
-          children: [
-            // Profile Header
-            Container(
-              margin: const EdgeInsets.all(16.0),
-              padding: const EdgeInsets.all(16.0),
-              decoration: BoxDecoration(
-                color: const Color(0xFF6B47DC),
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Column(
-                children: [
-                  const CircleAvatar(
-                    radius: 40,
-                    backgroundImage: AssetImage(
-                        'assets/images/main.jpg'), // Replace with actual image path
-                  ),
-                  const SizedBox(height: 10),
-                  const Text(
-                    'Fajar Kun',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              // Profile Header
+              Container(
+                margin: const EdgeInsets.all(16.0),
+                padding: const EdgeInsets.all(16.0),
+                decoration: BoxDecoration(
+                  color: const Color(0xFF6B47DC),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Column(
+                  children: [
+                    const CircleAvatar(
+                      radius: 40,
+                      backgroundImage: AssetImage(
+                          'assets/images/main.jpg'), // Replace with actual image path
                     ),
-                  ),
-                  const Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.location_on,
+                    const SizedBox(height: 10),
+                    const Text(
+                      'Fajar Kun',
+                      style: TextStyle(
                         color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
                       ),
-                      SizedBox(
-                        width: 5,
-                      ),
-                      Text(
-                        'Bogor, Indonesia',
-                        style: TextStyle(
-                          color: Colors.white70,
-                          fontSize: 14,
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 10),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      buildSocialIcon(
-                          "assets/images/facebook.png", Colors.blue),
-                      const SizedBox(width: 16),
-                      buildSocialIcon("assets/images/insta.png", Colors.pink),
-                      const SizedBox(width: 16),
-                      buildSocialIcon("assets/images/tik.png", Colors.teal),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            // Interests Section
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    'Interest',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
                     ),
-                  ),
-                  const SizedBox(height: 10),
-                  Row(
-                    children: [
-                      buildInterestChip('Fashion'),
-                      const SizedBox(width: 10),
-                      buildInterestChip('Music'),
-                      const SizedBox(width: 10),
-                      buildInterestChip('Cooking'),
-                    ],
-                  ),
-                ],
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.location_on,
+                          color: Colors.white,
+                        ),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Text(
+                          'Bogor, Indonesia',
+                          style: TextStyle(
+                            color: Colors.white70,
+                            fontSize: 14,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 10),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        buildSocialIcon(
+                            "assets/images/facebook.png", Colors.blue),
+                        const SizedBox(width: 16),
+                        buildSocialIcon("assets/images/insta.png", Colors.pink),
+                        const SizedBox(width: 16),
+                        buildSocialIcon("assets/images/tik.png", Colors.teal),
+                      ],
+                    ),
+                  ],
+                ),
               ),
-            ),
-            const SizedBox(height: 20),
-            // Menu Options
-            buildMenuOption(Icons.person, 'Data Profile'),
-            buildMenuOption(Icons.language, 'Language'),
-            buildMenuOption(Icons.dark_mode, 'Dark Mode'),
+              // Interests Section
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      'Interest',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    Row(
+                      children: [
+                        buildInterestChip('Fashion'),
+                        const SizedBox(width: 10),
+                        buildInterestChip('Music'),
+                        const SizedBox(width: 10),
+                        buildInterestChip('Cooking'),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 20),
+              // Menu Options
+              buildMenuOption(Icons.person, 'Data Profile'),
+              buildMenuOption(Icons.language, 'Language'),
+              buildMenuOption(Icons.dark_mode, 'Dark Mode'),
 
-            buildMenuOption(Icons.logout, 'Logout', isLogout: true),
-          ],
+              buildMenuOption(Icons.logout, 'Logout', isLogout: true),
+            ],
+          ),
         ),
       ),
     );

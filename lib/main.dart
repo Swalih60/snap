@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:snap/screens/message_screen.dart';
+import 'package:provider/provider.dart';
+import 'package:snap/components/bottom_nav.dart';
+import 'package:snap/providers/bottom_nav_provider.dart';
 
 void main() {
   runApp(const MainApp());
@@ -10,12 +12,19 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: MessagingScreen(),
-      theme: ThemeData(
-          floatingActionButtonTheme:
-              FloatingActionButtonThemeData(elevation: 0)),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => BottomProvider(),
+        )
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: BottomNavBar(),
+        theme: ThemeData(
+            floatingActionButtonTheme:
+                FloatingActionButtonThemeData(elevation: 0)),
+      ),
     );
   }
 }
