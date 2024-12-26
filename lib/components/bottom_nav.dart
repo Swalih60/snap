@@ -25,7 +25,7 @@ class BottomNavBar extends StatelessWidget {
       body: _pages[provider.currentIndex],
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.symmetric(
-            horizontal: 10.0), // Padding from all sides
+            horizontal: 5.0), // Padding from all sides
         child: ClipRRect(
           borderRadius: BorderRadius.circular(30),
           child: Container(
@@ -58,7 +58,7 @@ class BottomNavBar extends StatelessWidget {
                   ),
                   GButton(
                     icon: Icons.location_on,
-                    text: 'Data Profile',
+                    text: 'Data',
                     backgroundColor: const Color.fromRGBO(89, 69, 254, 1),
                     iconActiveColor: Colors.white,
                     textColor: Colors.white,

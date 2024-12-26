@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:snap/components/chip.dart';
+import 'package:snap/components/swipecard.dart';
 import 'package:swipe_cards/swipe_cards.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -12,20 +12,12 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   late List<SwipeItem> _swipeItems;
-  late MatchEngine _matchEngine;
 
   @override
   void initState() {
     super.initState();
-    _swipeItems = [
-      SwipeItem(content: "Card 1"),
-      SwipeItem(content: "Card 2"),
-      SwipeItem(content: "Card 3"),
-    ];
-
-    _matchEngine = MatchEngine(
-      swipeItems: _swipeItems,
-    );
+    _swipeItems =
+        List.generate(20, (index) => SwipeItem(content: "Card ${index + 1}"));
   }
 
   @override
@@ -83,15 +75,18 @@ class _HomeScreenState extends State<HomeScreen> {
                           ],
                         ),
                       ),
-                      Container(
-                        height: 48,
-                        width: 48,
-                        decoration: BoxDecoration(
-                          color: Colors.black,
-                          borderRadius: BorderRadius.circular(50),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 10.0),
+                        child: Container(
+                          height: 48,
+                          width: 48,
+                          decoration: BoxDecoration(
+                            color: Colors.black,
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                          child: const Icon(Icons.notifications,
+                              color: Colors.white),
                         ),
-                        child: const Icon(Icons.notifications,
-                            color: Colors.white),
                       ),
                     ],
                   ),
@@ -100,82 +95,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 Expanded(
                   child: Stack(
                     children: [
-                      SwipeCards(
-                        matchEngine: _matchEngine,
-                        itemBuilder: (BuildContext context, int index) {
-                          return Stack(
-                            clipBehavior: Clip.none,
-                            children: [
-                              Card(
-                                color: Colors.transparent,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(30),
-                                ),
-                                child: ClipPath(
-                                  clipper: ChatButtonClipper(),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(30),
-                                    child: Image.asset(
-                                      "assets/images/main.jpg",
-                                      fit: BoxFit.cover,
-                                      height: screenHeight / 1.6,
-                                      width: screenWidth,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Positioned(
-                                  bottom: 450,
-                                  left: 20,
-                                  child: Chipp(
-                                    text: "Kerala , India",
-                                  )),
-                              Positioned(
-                                bottom: 100,
-                                left: 20,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    const Text(
-                                      "Nur Aisyah, 24",
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 24,
-                                      ),
-                                    ),
-                                    Row(
-                                      children: [
-                                        Chipp(
-                                          text: 'Fashion',
-                                        ),
-                                        const SizedBox(width: 5),
-                                        Chipp(
-                                          text: 'Music',
-                                        ),
-                                        const SizedBox(width: 5),
-                                        Chipp(
-                                          text: 'Cooking',
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          );
-                        },
-                        onStackFinished: () {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                              content: Text("No more cards!"),
-                              padding: EdgeInsets.all(10),
-                            ),
-                          );
-                        },
-                        upSwipeAllowed: false,
-                        fillSpace: true,
-                      ),
+                      Swipee(
+                          matchEngine: MatchEngine(
+                            swipeItems: _swipeItems,
+                          ),
+                          h: screenHeight,
+                          w: screenWidth),
                       Positioned(
                         bottom: 5,
                         left: 0,
@@ -252,26 +177,5 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
     );
-  }
-}
-
-class ChatButtonClipper extends CustomClipper<Path> {
-  @override
-  Path getClip(Size size) {
-    final Path path = Path();
-    path.moveTo(0, 0);
-    path.lineTo(0, size.height - 60);
-    path.lineTo(size.width / 2 - 40, size.height - 60);
-    path.quadraticBezierTo(size.width / 2, size.height - 100,
-        size.width / 2 + 40, size.height - 60);
-    path.lineTo(size.width, size.height - 60);
-    path.lineTo(size.width, 0);
-    path.close();
-    return path;
-  }
-
-  @override
-  bool shouldReclip(covariant CustomClipper<Path> oldClipper) {
-    return false;
   }
 }
