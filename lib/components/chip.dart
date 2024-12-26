@@ -3,6 +3,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class Chipp extends StatelessWidget {
   String text;
   Chipp({

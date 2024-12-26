@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:snap/screens/home_screen.dart';
+import 'package:snap/screens/message_screen.dart';
 
 void main() {
   runApp(const MainApp());
@@ -12,7 +12,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: MessagingScreen(),
       theme: ThemeData(
           floatingActionButtonTheme:
               FloatingActionButtonThemeData(elevation: 0)),
