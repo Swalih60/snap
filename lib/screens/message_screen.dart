@@ -22,7 +22,7 @@ class MessagingScreen extends StatelessWidget {
                   color: const Color(0xFF6B47DC),
                   borderRadius: BorderRadius.circular(20),
                 ),
-                padding: const EdgeInsets.all(16.0),
+                padding: const EdgeInsets.all(10.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -45,9 +45,7 @@ class MessagingScreen extends StatelessWidget {
                       "Recent Matches",
                       style: TextStyle(color: Colors.white),
                     ),
-                    const SizedBox(
-                      height: 5,
-                    ),
+                    const SizedBox(height: 5),
                     SizedBox(
                       height: 110,
                       child: ListView.builder(
@@ -62,7 +60,13 @@ class MessagingScreen extends StatelessWidget {
                     const SizedBox(height: 16),
                     const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [ReqButton(), DateButton()],
+                      children: [
+                        ReqButton(),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        DateButton(),
+                      ],
                     ),
                   ],
                 ),

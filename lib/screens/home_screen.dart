@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:snap/components/cross_button.dart';
+import 'package:snap/components/love_button.dart';
 import 'package:snap/components/swipecard.dart';
 import 'package:swipe_cards/swipe_cards.dart';
 
@@ -131,35 +133,18 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: [
                       ClipRRect(
                         borderRadius: BorderRadius.circular(100),
-                        child: SizedBox(
+                        child: const SizedBox(
                           height: 70,
-                          width: 164,
-                          child: FloatingActionButton(
-                            onPressed: () {},
-                            backgroundColor:
-                                const Color.fromRGBO(39, 40, 53, 1),
-                            child: const Icon(
-                              Icons.close,
-                              color: Colors.red,
-                              size: 32,
-                            ),
-                          ),
+                          width: 160,
+                          child: CrossButton(),
                         ),
                       ),
                       ClipRRect(
                         borderRadius: BorderRadius.circular(100),
-                        child: SizedBox(
+                        child: const SizedBox(
                           height: 70,
-                          width: 164,
-                          child: FloatingActionButton(
-                            onPressed: () {},
-                            backgroundColor: Colors.yellow,
-                            child: const Icon(
-                              Icons.favorite,
-                              color: Colors.black,
-                              size: 32,
-                            ),
-                          ),
+                          width: 160,
+                          child: LoveButton(),
                         ),
                       ),
                     ],
