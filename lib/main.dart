@@ -22,8 +22,9 @@ class MainApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         home: BottomNavBar(),
         theme: ThemeData(
+            scaffoldBackgroundColor: Colors.black,
             floatingActionButtonTheme:
-                FloatingActionButtonThemeData(elevation: 0)),
+                const FloatingActionButtonThemeData(elevation: 0)),
       ),
     );
   }

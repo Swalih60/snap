@@ -6,6 +6,7 @@ class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _HomeScreenState createState() => _HomeScreenState();
 }
 
@@ -35,26 +36,23 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       body: Stack(
         children: [
-          // Background
           Positioned.fill(
             child: Container(
-              color: const Color.fromRGBO(89, 69, 254, 1), // Top color
+              color: const Color.fromRGBO(89, 69, 254, 1),
             ),
           ),
           Positioned(
-            top: screenHeight / 2, // Start at half the screen
+            top: screenHeight / 2,
             child: Container(
               height: screenHeight / 2,
               width: screenWidth,
-              color: Colors.black, // Bottom color
+              color: Colors.black,
             ),
           ),
-          // Foreground content
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: Column(
               children: [
-                // Header Section
                 Padding(
                   padding: const EdgeInsets.only(top: 40, left: 20, right: 20),
                   child: Row(
@@ -65,7 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         radius: 20,
                       ),
                       const Padding(
-                        padding: const EdgeInsets.only(right: 130.0),
+                        padding: EdgeInsets.only(right: 130.0),
                         child: Column(
                           children: [
                             Text(
@@ -99,7 +97,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 const SizedBox(height: 20),
-                // Swipable Card Section
                 Expanded(
                   child: Stack(
                     children: [
@@ -107,8 +104,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         matchEngine: _matchEngine,
                         itemBuilder: (BuildContext context, int index) {
                           return Stack(
-                            clipBehavior: Clip
-                                .none, // Allow positioning outside the stack
+                            clipBehavior: Clip.none,
                             children: [
                               Card(
                                 color: Colors.transparent,
@@ -120,10 +116,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(30),
                                     child: Image.asset(
-                                      "assets/images/main.jpg", // Replace with actual image
+                                      "assets/images/main.jpg",
                                       fit: BoxFit.cover,
-                                      height: screenHeight /
-                                          1.6, // Adjust height to avoid touching button
+                                      height: screenHeight / 1.6,
                                       width: screenWidth,
                                     ),
                                   ),
@@ -141,7 +136,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text(
+                                    const Text(
                                       "Nur Aisyah, 24",
                                       style: TextStyle(
                                         color: Colors.white,
@@ -154,11 +149,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                         Chipp(
                                           text: 'Fashion',
                                         ),
-                                        SizedBox(width: 5),
+                                        const SizedBox(width: 5),
                                         Chipp(
                                           text: 'Music',
                                         ),
-                                        SizedBox(width: 5),
+                                        const SizedBox(width: 5),
                                         Chipp(
                                           text: 'Cooking',
                                         ),
@@ -181,7 +176,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         upSwipeAllowed: false,
                         fillSpace: true,
                       ),
-                      // Chat Button Positioned Slightly Below the Cards
                       Positioned(
                         bottom: 5,
                         left: 0,
@@ -208,7 +202,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                 ),
-                // Bottom Buttons
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 20),
                   child: Row(
@@ -250,7 +243,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 70,
                 )
               ],

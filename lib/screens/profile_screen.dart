@@ -8,16 +8,14 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF121212),
+      backgroundColor: const Color(0xFF121212),
       appBar: AppBar(
         backgroundColor: Colors.black,
         elevation: 0,
         title: const Text('Profile', style: TextStyle(color: Colors.white)),
         actions: [
           ElevatedButton.icon(
-            onPressed: () {
-              // Edit action
-            },
+            onPressed: () {},
             icon: const Icon(Icons.upload_file, color: Color(0xFF6B47DC)),
             label: const Text(
               'Edit',
@@ -40,8 +38,8 @@ class ProfileScreen extends StatelessWidget {
             children: [
               // Profile Header
               Container(
-                margin: const EdgeInsets.all(16.0),
-                padding: const EdgeInsets.all(16.0),
+                margin: const EdgeInsets.all(12.0),
+                padding: const EdgeInsets.all(12.0),
                 decoration: BoxDecoration(
                   color: const Color(0xFF6B47DC),
                   borderRadius: BorderRadius.circular(20),
@@ -50,8 +48,7 @@ class ProfileScreen extends StatelessWidget {
                   children: [
                     const CircleAvatar(
                       radius: 40,
-                      backgroundImage: AssetImage(
-                          'assets/images/main.jpg'), // Replace with actual image path
+                      backgroundImage: AssetImage('assets/images/main.jpg'),
                     ),
                     const SizedBox(height: 10),
                     const Text(
@@ -96,7 +93,7 @@ class ProfileScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              // Interests Section
+
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: Column(
@@ -123,8 +120,7 @@ class ProfileScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              const SizedBox(height: 20),
-              // Menu Options
+
               buildMenuOption(Icons.person, 'Data Profile'),
               buildMenuOption(Icons.language, 'Language'),
               buildMenuOption(Icons.dark_mode, 'Dark Mode'),

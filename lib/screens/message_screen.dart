@@ -8,12 +8,11 @@ class MessagingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF121212),
+      backgroundColor: const Color(0xFF121212),
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Recent Matches Section
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Container(
@@ -58,16 +57,6 @@ class MessagingScreen extends StatelessWidget {
                         },
                       ),
                     ),
-                    // Recent Matches avatars
-                    // Row(
-                    //   children: [
-                    //     buildMatchAvatar(
-                    //         'Jennifer', 'assets/jennifer.png', true),
-                    //     buildMatchAvatar('Ainun', 'assets/ainun.png', true),
-                    //     buildMatchAvatar('Siti', 'assets/siti.png', true),
-                    //     buildMatchAvatar('Nabila', 'assets/nabila.png', true),
-                    //   ],
-                    // ),
                     const SizedBox(height: 16),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -117,7 +106,6 @@ class MessagingScreen extends StatelessWidget {
                     TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
               ),
             ),
-            // Chat List Section
             Expanded(
               child: ListView.builder(
                 itemCount: 20,
