@@ -3,25 +3,29 @@ import 'package:snap/components/chatTile.dart';
 import 'package:snap/components/matchAvatar.dart';
 
 class MessagingScreen extends StatelessWidget {
+  const MessagingScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFF121212),
       body: SafeArea(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Recent Matches Section
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Container(
                 decoration: BoxDecoration(
-                  color: Color(0xFF6B47DC),
+                  color: const Color(0xFF6B47DC),
                   borderRadius: BorderRadius.circular(20),
                 ),
-                padding: EdgeInsets.all(16.0),
+                padding: const EdgeInsets.all(16.0),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Row(
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
@@ -35,9 +39,16 @@ class MessagingScreen extends StatelessWidget {
                         Icon(Icons.search, color: Colors.white),
                       ],
                     ),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
+                    const Text(
+                      "Recent Matches",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    const SizedBox(
+                      height: 5,
+                    ),
                     SizedBox(
-                      height: 100,
+                      height: 110,
                       child: ListView.builder(
                         scrollDirection: Axis.horizontal,
                         itemCount: 20,
@@ -57,28 +68,38 @@ class MessagingScreen extends StatelessWidget {
                     //     buildMatchAvatar('Nabila', 'assets/nabila.png', true),
                     //   ],
                     // ),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         ElevatedButton.icon(
                           onPressed: () {},
-                          icon: Icon(Icons.add, color: Colors.white),
-                          label: Text("Request Dating"),
+                          icon: const Icon(Icons.upload_file,
+                              color: Color(0xFF6B47DC)),
+                          label: const Text("Request Dating"),
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.white24,
+                            backgroundColor: Colors.white,
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
+                              borderRadius: BorderRadius.circular(100),
                             ),
                           ),
                         ),
-                        ElevatedButton(
+                        ElevatedButton.icon(
                           onPressed: () {},
-                          child: Text("Dating List"),
+                          icon: const Icon(
+                            Icons.list,
+                            color: Colors.black,
+                          ),
+                          label: const Text(
+                            "Dating List",
+                            style: TextStyle(
+                              color: Colors.black,
+                            ),
+                          ),
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Color(0xFFE1BEE7),
+                            backgroundColor: Color.fromRGBO(210, 247, 2, 1),
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
+                              borderRadius: BorderRadius.circular(100),
                             ),
                           ),
                         ),
@@ -86,6 +107,14 @@ class MessagingScreen extends StatelessWidget {
                     ),
                   ],
                 ),
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.only(left: 20.0),
+              child: Text(
+                "Chat",
+                style:
+                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
               ),
             ),
             // Chat List Section
@@ -100,25 +129,6 @@ class MessagingScreen extends StatelessWidget {
             ),
           ],
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.black,
-        selectedItemColor: Color(0xFF6B47DC),
-        unselectedItemColor: Colors.grey,
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.message),
-            label: '',
-          ),
-        ],
       ),
     );
   }

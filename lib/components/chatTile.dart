@@ -5,8 +5,19 @@ Widget buildChatTile(
   return ListTile(
     leading: Stack(
       children: [
-        CircleAvatar(
-          backgroundImage: AssetImage('assets/images/main.jpg'),
+        // Container wrapping CircleAvatar to add border
+        Container(
+          padding: EdgeInsets.all(2), // Border thickness
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            border: Border.all(
+                color: Color.fromRGBO(89, 69, 254, 1),
+                width: 2), // Border color and thickness
+          ),
+          child: CircleAvatar(
+            maxRadius: 25,
+            backgroundImage: AssetImage('assets/images/main.jpg'),
+          ),
         ),
         if (online)
           Positioned(
@@ -26,7 +37,7 @@ Widget buildChatTile(
     ),
     title: Text(
       name,
-      style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+      style: TextStyle(color: Colors.white),
     ),
     subtitle: Text(
       message,

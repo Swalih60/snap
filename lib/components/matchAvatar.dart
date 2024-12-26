@@ -28,9 +28,17 @@ Widget buildMatchAvatar(String name, String avatarPath, bool online) {
           ],
         ),
         SizedBox(height: 6),
-        Text(
-          name,
-          style: TextStyle(color: Colors.white),
+        Column(
+          children: [
+            Text(
+              name,
+              style: TextStyle(color: Colors.white),
+            ),
+            Text(
+              "5 min ago",
+              style: TextStyle(color: Colors.white),
+            ),
+          ],
         ),
       ],
     ),
